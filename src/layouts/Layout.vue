@@ -1,14 +1,14 @@
 <template>
   <div class="layout">
     <Header></Header>
-    <vue-router></vue-router>
+      <router-view></router-view>
     <Footer></Footer>
   </div>
 </template>
 
 <script>
-  import Header from './Header.vue'
-  import Footer from './Footer.vue'
+  import Header from '../components/Header.vue'
+  import Footer from '../components/Footer.vue'
 
 export default {
   name: 'Layout',
