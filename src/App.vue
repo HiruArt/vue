@@ -1,27 +1,26 @@
 <template>
   <div id="app">
-    <Layout></Layout>
+    <component :is="layout">
+      <router-view/>
+    </component>
   </div>
 </template>
 
 <script>
-import Layout from './layouts/Layout.vue'
-
-export default {
-  name: 'app',
-  components: {
-    Layout,
-  },
-  computed: {
-    layout(){
-      return 'main-layout'
+  export default {
+    name: 'app',
+    components: {
+      DefaultLayout: () => import('./layouts/DefaultLayout.vue'),
+    },
+    computed: {
+      layout() {
+        return this.$route.meta.layout || 'default-layout'
+      }
     }
   }
-}
 </script>
 
 <style>
-  @import '~materialize-css/dist/css/materialize.min.css';
   @import 'assets/css/main.css';
 
 </style>

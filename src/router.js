@@ -27,5 +27,21 @@ export default new Router({
       name: 'Contact',
       component: () => import ('./views/Contact.vue')
     },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('@/views/auth/Login.vue'),
+      meta: {
+        layout: 'auth-layout'
+      }
+    },
+    {
+      path: '/sign-up',
+      name: 'sign-up',
+      component: () => import('@/views/auth/SignUp.vue'),
+      meta: {
+        layout: 'auth-layout'
+      }
+    }
   ]
 })

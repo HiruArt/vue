@@ -1,13 +1,16 @@
 <template>
     <div>
         <nav>
-            <!--<router-link  to="/news">News</router-link>-->
-            <!--<router-link  to="/about-us">About us</router-link>-->
-            <!--<router-link  to="/contact">Contact</router-link>-->
             <router-link v-for="routes in links"
                          v-bind:key="routes.id"
                          :to="`${routes.page}`"> {{routes.text}} </router-link>
         </nav>
+
+        <div class="header-auth">
+            <router-link v-for="routes in auth"
+                         v-bind:key="routes.id"
+                         :to="`${routes.page}`"> {{routes.text}} </router-link>
+        </div>
     </div>
 </template>
 
@@ -37,6 +40,19 @@
             text: 'contact',
             page: '/contact'
           }
+        ],
+
+        auth: [
+          {
+            id: 0,
+            text: 'login',
+            page: '/login'
+          },
+          {
+            id: 1,
+            text: 'sign up',
+            page: '/sign-up'
+          },
         ]
       }
     }

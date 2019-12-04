@@ -1,5 +1,5 @@
 <template>
-  <div class="layout">
+  <div class="container">
     <Header></Header>
       <router-view></router-view>
     <Footer></Footer>
@@ -11,7 +11,7 @@
   import Footer from '../components/Footer.vue'
 
 export default {
-  name: 'Layout',
+  name: 'MainLayout',
   props: {
 
   },
